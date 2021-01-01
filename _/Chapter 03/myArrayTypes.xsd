@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="http://www.example.org"
+  targetNamespace="http://www.example.org" 
+  elementFormDefault="qualified">
+  <xsd:complexType name="TElement">
+    <xsd:sequence>
+      <xsd:element name="user" type="xsd:string"/>
+      <xsd:element name="outcome" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="elem" type="ns:TElement">
+  </xsd:element>
+  <xsd:element name="array">
+    <xsd:complexType>
+       <xsd:sequence>
+         <xsd:element name="elem" type="ns:TElement" 
+           maxOccurs="unbounded"/>
+       </xsd:sequence>
+     </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

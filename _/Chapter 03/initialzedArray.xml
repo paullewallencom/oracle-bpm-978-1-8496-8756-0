@@ -1,0 +1,10 @@
+<exam:array xmlns:exam="http://www.example.org">
+  <exam:elem>
+	<exam:user>user1</exam:user>
+	<exam:outcome>APPROVE</exam:outcome>
+  </exam:elem>
+  <exam:elem>
+	<exam:user>user2</exam:user>
+	<exam:outcome>REJECT</exam:outcome>
+  </exam:elem>
+</exam:array>

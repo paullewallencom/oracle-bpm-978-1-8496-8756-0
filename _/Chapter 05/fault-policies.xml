@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<faultPolicies xmlns="http://schemas.oracle.com/bpel/faultpolicy"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <faultPolicy version="2.0.1" id="SamplePolicy"
+               xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns="http://schemas.oracle.com/bpel/faultpolicy"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Conditions>
+      <faultName>
+        <condition>
+          <action ref="Retry"/>
+        </condition>
+      </faultName>
+    </Conditions>
+    <Actions>
+      <Action id="Retry">
+        <retry>
+          <retryCount>3</retryCount>
+          <retryInterval>5</retryInterval>
+          <exponentialBackoff/>
+          <retryFailureAction ref="HumanIntervention"/>
+        </retry>
+      </Action>
+      <Action id="HumanIntervention">
+        <humanIntervention/>
+      </Action>
+    </Actions>
+  </faultPolicy>
+</faultPolicies>
